@@ -59,7 +59,9 @@
                     <TextBlock Margin="3">Вычисления</TextBlock>
                 </HeaderedContentControl.Header>
                 <ContentControl.Content>
-                    <StackPanel Background="Gray"/>
+                    <ScrollViewer>
+                        <TextBlock TextWrapping="Wrap" Name="TextBlock"></TextBlock>
+                    </ScrollViewer>
                 </ContentControl.Content>
             </TabItem>
         </TabControl>

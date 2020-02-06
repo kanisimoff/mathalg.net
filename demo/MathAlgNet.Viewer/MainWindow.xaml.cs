@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MathAlgNet.Viewer.ViewModel;
+using MathAlgNet.Viewer.WriterProvider;
 
 namespace MathAlgNet.Viewer
 {
@@ -25,6 +26,9 @@ namespace MathAlgNet.Viewer
         {
             InitializeComponent();
             this.DataContext = new SquareMethodViewModel();
+            Console.SetOut(new ControlWriter(this.TextBlock));
+            Console.WriteLine("Данная программа позволяет выполнить среднеквадратичное приближение по степенному базису для функции, заданной таблично, а также вычислить значение функции при некотором значении параметра x");
+            Console.WriteLine("");
         }
 
         private void Evalute_OnClick(object sender, RoutedEventArgs e)

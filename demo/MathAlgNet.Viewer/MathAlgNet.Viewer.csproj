@@ -8,10 +8,15 @@
 
   <ItemGroup>
     <PackageReference Include="LiveCharts.Wpf.NetCore3" Version="0.9.7" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="3.4.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\MathAlgNet.Matrix\MathAlgNet.Matrix.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="FuncEvaluate\" />
   </ItemGroup>
 
 </Project>
