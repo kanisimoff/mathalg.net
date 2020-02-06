@@ -1,0 +1,67 @@
+﻿<Window x:Class="MathAlgNet.Viewer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MathAlgNet.Viewer"
+        xmlns:wpf="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+        xmlns:base="clr-namespace:LiveCharts.Wpf.Charts.Base;assembly=LiveCharts.Wpf"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <GroupBox Grid.Column="0" Grid.Row="0" Header="Ввод данных" Padding="5">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="150" Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0">Степень полинома</Label>
+                <TextBox Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="3"
+                 Text="{Binding Path=PolynomeDegree}"/>
+                <DataGrid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" AutoGenerateColumns="False" CanUserAddRows="True"
+                  ItemsSource="{Binding Path=Points}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="X" Width="*" Binding="{Binding Path=X}"/>
+                        <DataGridTextColumn Header="Y" Width="*" Binding="{Binding Path=Y}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Button Grid.Row="2" Grid.Column="0" Margin="3">Рассчет</Button>
+                <Button Grid.Row="2" Grid.Column="1" Margin="3">Очистить</Button>
+            </Grid>
+        </GroupBox>
+        <GridSplitter Grid.Column="1" Grid.Row="0" Width="3" VerticalAlignment="Stretch" HorizontalAlignment="Center"
+                  ShowsPreview="False"/>
+        <TabControl Grid.Column="2" Grid.Row="0">
+            <TabItem>
+                <HeaderedContentControl.Header>
+                    <TextBlock Margin="3">График</TextBlock>
+                </HeaderedContentControl.Header>
+                <ContentControl.Content>
+                    <wpf:CartesianChart LegendLocation="Top" Grid.Column="0" Grid.Row="0" Series="{Binding SeriesCollection}" >
+                    </wpf:CartesianChart>
+                </ContentControl.Content>
+            </TabItem>
+            <TabItem>
+                <HeaderedContentControl.Header>
+                    <TextBlock Margin="3">Вычисления</TextBlock>
+                </HeaderedContentControl.Header>
+                <ContentControl.Content>
+                    <StackPanel Background="Gray"/>
+                </ContentControl.Content>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
