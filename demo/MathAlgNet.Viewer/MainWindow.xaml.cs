@@ -27,7 +27,7 @@ namespace MathAlgNet.Viewer
             this.DataContext = new SquareMethodViewModel();
         }
 
-        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        private void Evalute_OnClick(object sender, RoutedEventArgs e)
         {
             if (!(this.DataContext is SquareMethodViewModel dataContext))
                 return;

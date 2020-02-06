@@ -38,7 +38,7 @@
                         <DataGridTextColumn Header="Y" Width="*" Binding="{Binding Path=Y}"/>
                     </DataGrid.Columns>
                 </DataGrid>
-                <Button Grid.Row="2" Grid.Column="0" Margin="3">Рассчет</Button>
+                <Button Grid.Row="2" Grid.Column="0" Margin="3" Click="Evalute_OnClick">Рассчет</Button>
                 <Button Grid.Row="2" Grid.Column="1" Margin="3">Очистить</Button>
             </Grid>
         </GroupBox>

@@ -7,6 +7,8 @@ using LiveCharts.Configurations;
 using LiveCharts.Defaults;
 using LiveCharts.Definitions.Series;
 using LiveCharts.Wpf;
+using MathAlgNet.Matrix;
+using MathAlgNet.Matrix.Methods;
 
 namespace MathAlgNet.Viewer.ViewModel
 {
@@ -22,6 +24,8 @@ namespace MathAlgNet.Viewer.ViewModel
 
         public SquareMethodViewModel()
         {
+            PolynomeDegree = 2;
+
             Points = new ChartValues<ObservablePoint>
             {
                 new ObservablePoint() {X = 0.75, Y = 2.5},
@@ -46,12 +50,8 @@ namespace MathAlgNet.Viewer.ViewModel
 
         public void Evalute()
         {
-            /*
-            MatrixUtil.MakeSystem(new Matrix<double>(this.Points.Select<ObservablePoint, double[]>((Func<ObservablePoint, double[]>)(x => new double[2]
-           {
-        x.X,
-        x.Y
-           })).ToArray<double[]>().ToMatrix<double>()).Transpose<double>().Value, this.PolynomeDegree + 1);*/
+            var matrix = new Matrix<double>(ArrayHelper.FromVectors(Points.Select(v => new[] {v.X, v.Y}).ToArray())).Transpose();
+            var t= LeastSquares.MakeSystem(matrix.Value, PolynomeDegree+1);
         }
 
         private ChartValues<double> getChartValues()

@@ -9,9 +9,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{C40EE53E
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "demo", "demo", "{1E50B2B7-1E07-4A2B-87BF-E1E89F13B2BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathAlgNet.Matrix.UnitTests", "tests\MathAlgNet.Matrix.UnitTests\MathAlgNet.Matrix.UnitTests.csproj", "{625955EA-2927-4FB3-BC04-558DBADFF665}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MathAlgNet.Matrix.UnitTests", "tests\MathAlgNet.Matrix.UnitTests\MathAlgNet.Matrix.UnitTests.csproj", "{625955EA-2927-4FB3-BC04-558DBADFF665}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathAlgNet.Viewer", "demo\MathAlgNet.Viewer\MathAlgNet.Viewer.csproj", "{BBFD164B-E209-4407-A1F1-6E7AAC800F9B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MathAlgNet.Viewer", "demo\MathAlgNet.Viewer\MathAlgNet.Viewer.csproj", "{BBFD164B-E209-4407-A1F1-6E7AAC800F9B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A8088B26-0B24-4752-959B-4C49F7F8579D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,6 +38,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{A6C4C917-83A3-47BF-9E33-0DCE66622494} = {A8088B26-0B24-4752-959B-4C49F7F8579D}
 		{625955EA-2927-4FB3-BC04-558DBADFF665} = {C40EE53E-FB2E-4FBC-A252-6D520D0D645C}
 		{BBFD164B-E209-4407-A1F1-6E7AAC800F9B} = {1E50B2B7-1E07-4A2B-87BF-E1E89F13B2BA}
 	EndGlobalSection

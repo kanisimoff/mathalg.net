@@ -9,7 +9,7 @@ namespace MathAlgNet.Matrix
     /// <typeparam name="T"></typeparam>
     public struct Matrix<T> where T : struct
     {
-        readonly T[,] _matrix;
+        private readonly T[,] _matrix;
 
         public Matrix(T[,] matrix)
         {
@@ -24,13 +24,17 @@ namespace MathAlgNet.Matrix
             try
             {
                 var vectorArray = lines
-                    .Select(x => x.Trim().Split(' ').Select(singleVal => (T)Convert.ChangeType(singleVal, typeof(T))).ToArray())
+                    .Select(x => x.Trim()
+                            .Split(' ')
+                            .Select(singleVal => (T)Convert.ChangeType(singleVal, typeof(T)))
+                            .ToArray()
+                    )
                     .ToArray();
                 _matrix = ArrayHelper.FromVectors(vectorArray);
             }
             catch (Exception e)
             {
-                throw;
+                throw e;
             }
 
         }
